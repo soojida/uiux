@@ -1,0 +1,163 @@
+@charset "utf-8";
+
+/*기본설정*/
+body{/*특정도값 : 1점*/
+    font-size:12px;
+    background-color:#fdfcf0;
+}
+
+#wrap{/*특정도값 : 100점*/
+    width:1000px;
+    margin:0 auto;
+    /* outline:1px solid red; 임시설정 */
+}
+
+/*헤더영역*/
+header>h1{/*특정도값 : 2점*/
+    padding:50px 0 20px 0 ;
+    font-size:15px;
+}
+
+/*인접형제(동기)연산자 p 선택*/
+header>h1+p{/*특정도값 : 3점*/
+    font-weight:800;/*기본값 400*/
+    line-height:1.4/*기본값 120%, 1.2*/
+}
+
+/*본문영역*/
+section{/*특정도값 : 1점*/
+    margin:20px 0;
+    
+}
+
+section>.guide{/*특정도값 : 11점*/
+    padding:40px 0;
+    border:1px solid #e1ddd3;
+    
+    /*방법1*/
+    border-top:1px solid #e1ddd3;
+    border-bottom:1px solid #e1ddd3;
+    
+    /*방법2*/
+    border-right:none;
+    border-left:none;
+    
+}
+section>.guide>h3{  /*특정도값 : 12점*/
+    margin-bottom:20px;
+    color:#764d25;
+    font-size:13px;
+    text-indent:30px;/*margin-left:30px;도 같은 결과*/
+    
+    /* 질문) height와 line-height를 꼭 같이 써야 하는가?
+            꼭, 그렇지는 않다. 같이 쓰지 않아도 된다.
+            문장이 가운데 오도록 하기위해서 씀.
+     outline:1px solid red;
+    line-height:100px;
+    */
+}
+
+section>.guide>ul{/*특정도값 : 12점*/
+    margin-left:30px;
+}
+section>.guide>ul>li{/*특정도값 : 12점*/
+    font-weight:600;
+    line-height:1.6;/*160%와 동일*/
+    
+}
+
+section>.guide>ul>li>span{/*특정도값 : 14점*/
+    display:block;
+    margin-left:8px;/*text-indent:8px;도 같은 결과*/
+}
+
+    
+section>.contact{/*특정도값 : 11점*/
+    margin-top:30px;
+}
+section>.contact>h3{/*특정도값 : 12점*/
+    margin-left:30px;
+    margin-bottom:20px;
+    font-size:13px;
+}
+section>.contact>div{/*특정도값 : 12점*/
+    margin:0 15px 20px 15px;
+    /*margin:0 15px 20px;와 동일*/
+    padding:20px 0 20px 20px;
+    border:1px solid #e1ddd3;
+}
+section>.contact>div>ul{/*특정도값 : 13점*/
+    
+}
+
+/*
+    문맥선택자는 자손을 선택할 때 사용하는데 한칸공백으로 표현한다.
+    주의: 선택시 중복되는 요소를 반드시 확인하며 신중히,
+         문제가 없다는 것이 확실할 때 사용한다.
+*/
+section>.contact>div>ul>li{/*특정도값 : 14점*/
+    height:18px;
+    line-height:18px;
+    
+}
+section>.contact>div>p{/*특정도값 : 13점*/
+    margin-top:20px;
+    /* height:40px;
+    line-height:40px;*/
+    
+    font-weight:600;
+    
+}
+section>.contact>p{/*특정도값 : 12점*/
+    margin: 20px 15px;
+    
+    /*
+    h3와 마진통합현상 발생하므로 의미없음
+    margin-top:20px;
+    margin-right:15px;
+    margin-bottom:20px;
+    margin-left:15px;
+    */
+    
+    padding:20px 0 20px 20px;
+    line-height:18px;
+    border:1px solid #e1ddd3;
+}
+
+
+
+
+
+/*푸터영역*/
+footer>p>button{/*특정도값 : 3점*/
+    /*버튼을 스타일링 할 때는 built-in CSS 초기화*/
+    padding:0;
+    background:none;
+    border:none;
+    box-sizing:content-box;
+    outline:none;
+    
+
+    display:block;
+    width:160px;
+    height:25px;
+    margin:0 auto;/*가로폭이 고정수치일 때 의미가 있음*/
+    font-size:12px;
+    line-height:25px;
+    text-align:center;
+    border:2px solid #727272;
+    border-radius:5px;
+}
+
+footer>p>a{/*특정도값 : 3점*/
+    display:block;
+    width:160px;
+    height:25px;
+    margin:0 auto;/*가로폭이 고정수치일 때 의미가 있음*/
+    font-size:12px;
+    line-height:25px;
+    text-align:center;
+    border:2px solid #727272;
+    border-radius:5px;
+}
+

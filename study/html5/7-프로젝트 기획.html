@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>프로젝트 기획</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        /*
+            같은의미 다른표현
+            태그 == 요소 == 선택자 == 엘리먼트
+        */
+        
+        /* .work 클래스를 가진 div 선택자 */
+        div.work{
+            background-color:yellow;
+        }
+        div.cont{
+            background-color:pink;
+            /* border:선굵기 선스타일 선색상; */
+            border:1px solid black;
+            
+            border-width:5px;
+            /* 중복된 부분은 재정의 됨 */
+            border-style:dashed;
+            border-style:dotted;
+            border-style:double;
+            
+            border-color:blue;
+            
+        }
+        
+        /* >(꺽쇠)는 직계자식을 의미 */
+        div.cont>h3{color:blue;}
+        
+        /*
+            Class의 활용
+            
+            같은 css의 효과를 여러 다른 요소에
+            공통으로 적용하고 싶을 때 사용하기도 한다.
+        */
+        
+        /*
+            .idea의 의미(해석)
+            *.idea와 같다. 여기서 별표(*)는 모든 태그를 의미.
+        
+            .idea 클래스가 붙어있는 모든 선택자
+        
+        */
+        
+        /* 클래스를 먼저 정의하고, 아래 소스코드에 붙여넣는 방식으로 작업할 경우도 있다.*/
+        
+        .myborder{border:3px solid red;}
+        
+        .idea{background-color:aqua;}
+        .brain{background-color:chartreuse;}
+        
+        img{width:300px;height:auto;}
+        /* auto는 이미지 비율을 유지하면서 width 값에 잘 맞춰줘라 */
+        
+        
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>프로젝트 기획</h1>
+    
+    <div class="work">
+        <h2>기획안 작업</h2>
+        
+        <h3 class="web-plan">1. 기획은 웹 콘텐츠의 설계도</h3>
+        <h4>1) 목표를 설정</h4>
+        <h4>2) 목표를 성취하기 위한 필수단계</h4>
+        
+        <h3 class="result">2. 기획자의 뚜렷한 주관과 독창성이 담긴 결과물</h3>
+        <h4>1) 아이디어는 번뜩이는 섬광</h4>
+        <h4>2) 평소에 꾸준히 관심을 기울여야 한다.</h4>
+                                                              
+    </div>
+    
+    <div class="cont">
+        <h2>기획안 내용 작성</h2>
+        
+        <h3>1. 안좋은 기획안</h3>
+        <h4>1) 자료만 옮겨붙인 설득력 없는 내용</h4>
+        <h4>2) 제작목적이 불분명하다.</h4>
+        <h4>3) 내용에 대한 전달력이 떨어진다.</h4>
+        
+        <h3>2. 좋은 기획안</h3>
+        <h4>1) 제작해야 할 타당성을 갖춘다.</h4>
+        <h4>2) 적합한 내용으로 일목요연한 구성 및 전달</h4>
+        
+    </div>
+    
+    <div class="idea myborder">
+        <h2>아이디어 도출</h2>    
+        
+        <h3>아이디어 발상과정</h3>
+        <h4>아이디어는 자신이 가진 지식과 경험의 범위 내에서만 떠오른다.</h4>
+        <h4>아이디어를 생각해내는 방법에는 정답이 없다.</h4>
+                
+        <h3>좌뇌형, 우뇌형 인간의 특징</h3>
+        <h4>누구나 꾸준한 훈련을 통해 양쪽 뇌의 기능을 고르게 활용할 수 있다.</h4>
+    </div>
+        
+    <div class="idea myborder brain">
+        <h2>아이디어 발상</h2>
+        
+        <h3>마인드 매핑</h3>
+        <h4>핵심 문제와 관련된 여러 요인들을 발견하고,
+        관련 요인에서 아이디어의 단서를 찾고자  할 때 활용한다.</h4>
+        <p><img src="images/mindmapping.jpg" alt="좌뇌형과 우뇌형"></p>
+        
+        <h3>브레인 스토밍</h3>
+        <h4>문제나 해결방법에 대해 최대한 많은 의견을 수집하고,
+        공유하고자 할 때 활용한다.</h4>
+        <p>
+            <img src="images/brainstorming.jpg" alt="닭 프로젝트 브레인 스토밍">
+        </p>
+        
+    </div>
+    
+  
+
+    
+</div>    
+</body>
+</html>

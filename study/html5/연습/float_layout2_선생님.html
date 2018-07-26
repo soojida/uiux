@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float을 이용한 레이아웃</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+			*{margin:0;padding:0;}
+		
+        #wrap{
+            width:960px;
+            margin:30px auto 0;
+            
+            /*텍스트 관련속성은 자손에게 상속된다.*/
+            font-weight:800;
+            font-size:2em;/*=32px*/
+            text-align:center;
+            
+        }
+        
+        header,
+        .lnb,
+        .ad,
+        .cont,
+        footer{
+            border-radius:10px;
+        }
+        
+        header{
+            height:100px;
+            background-color:gray;
+        }
+        
+        section{
+            margin:10px 0;
+            *zoom:1;
+        }
+        
+        section:after{
+            display:block;/*cl:b는 반드시 block속성에서만 적용*/
+            clear:both;/*플롯의 영향력 차단효과*/
+            content:'';/*가상선택자:after는 반드시 content 속성이 필요*/
+        }
+        
+        section>.left{
+            float:left;
+            width:200px;
+        }
+        
+        section>.left>.lnb{ 
+            height:250px;
+            margin-bottom:10px;
+            background-color:blue;
+        }
+        
+        section>.left>.ad{
+            height:140px;
+            
+            background-color:pink;
+        }
+        
+        section>.cont{
+            float:right;
+            width:750px;
+            height:400px;
+            background-color:yellow;
+        }	
+        
+        footer{
+            height:100px;
+            background-color:brown;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrap">
+	<header>헤더</header>
+	<section>
+		<article class="left">
+		    <div class="lnb">LNB</div>
+		    <div class="ad">AD</div>
+		</article>
+		<article class="cont">컨텐츠</article>
+	</section>
+	<footer>푸터</footer>
+</div>    
+            
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

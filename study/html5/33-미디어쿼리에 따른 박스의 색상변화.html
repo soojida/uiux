@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>미디어쿼리에 따른 박스의 색상변화</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        html, body{height:100%;}
+        
+        /* 와이드pc */
+        #wrap{
+            width:1024px;
+            height:100%;
+            margin:0 auto;
+            text-align:center;
+            line-height:500px;
+            background-color:yellow;
+        }
+        
+        
+        /* 일반pc */
+        /*접속장치가 스크린이 달려있고 width<=1199px(작거나 같으면) */
+        @media screen and (max-width:1200px){
+            
+            #wrap{
+                width:970px;
+                background-color:#0f0;
+                }
+        }
+        
+        @media screen and (max-width:992px){            
+            #wrap{
+                width:750px;
+                background-color:pink;
+            }
+        }
+        
+        /* 태블릿 */
+        @media screen and (max-width:768px){            
+            #wrap{
+                width:100%;
+                background-color:blue;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <span id="width">1200</span> x <span id="height">800</span>
+    </div>
+    
+    <script>
+    
+    window.onload = function(){
+        
+        document.getElementById("width").innerHTML = screen.width;
+        
+        document.getElementById("height").innerHTML = screen.height;
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내용과 테두리 사이의 공간 padding</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        /* 기본설정 */
+        a:link{font-weight:800;}
+        /* hret 값이 설정되어 있는 경우 */
+        
+        a:visited{color:green !important;}
+        /* 한번이라도 클릭한 적이 있다면 적용 */
+        
+        a:hover{background-color:chartreuse !important;}
+        /* hover : 마우스 포인터가 a(anchor)영역으로 진입(mouse enter의 개념)한다. */
+        
+        a:active{color:red !important;}
+        /* 진입 후 마우스 왼쪽 버튼을 누르고 있는 상태 */
+        
+        #wrap{
+            width:800px;
+            margin:0 auto;
+/*            border:1px solid black;*/
+        }  
+        
+        section>h2{margin-bottom:30px;}
+        
+        /*첫번째 article의 h3를 선택*/
+        section>article.frst>h3{
+            height:200px;
+            margin-bottom:100px;
+            padding-top:50px;/*패딩 적용시 박스의 크기가 커진다.*/
+            border:1px solid red;
+        }
+        
+        /***********************************************************/
+        section>article.sec{margin-bottom:100px;}
+        section>article.sec>p{margin-top:20px;}
+        
+        section>article.sec>p>a{
+            /* 박스사이즈에 영향을 미치지 않는 outline */
+            
+            /* 인라인요소는 위,아래 margin/padding이 정상적으로 적용되지않기 때문에
+            반드시 block의 속성을 적용한다. */
+            
+            display:inline-block;
+            padding-right:30px;
+            padding-left:30px;
+            padding-top:20px;
+            padding-bottom:20px;            
+            outline:1px solid green;
+            
+            color:white;
+            background-color:#0977bc;
+        }
+        
+        /* : 표기로 선택을 도와주는 가상선택자
+             
+           - 태생자체가 부모자식의 패밀리 구조로 이루어진
+             태그들은 : first-child 같은 가상선택자가
+             100% 정상적으로 작동한다.
+             
+             그러나 코딩 중 만들어진 인위적인 부모자식 관계에서
+             가상선택자를 사용할 경우 정상적으로 될 때도 있지만
+             비정상적으로 작동하기도 한다.
+        
+           * 만약, 비정상적으로 작동할 경우
+             고민하지 말고
+             빨리 다른 방법을 찾는 것이 현명하다.
+        */
+        section>article.sec>p>a:first-child{
+            background-color:#25aae1;
+        }
+        section>article.sec>p>a:nth-child(2){
+            background-color:blueviolet;
+        }
+        section>article.sec>p>a:nth-child(3){
+            background-color:brown;
+        }
+        section>article.sec>p>a:nth-child(4){
+            background-color:darkblue;
+        }
+        section>article.sec>p>a:last-child{
+            background-color:red;
+        }
+        
+        /***********************************************************/
+        h4{height:100px;line-height:100px;}
+        h4>span:before{content:'나이 ';}
+        h4>span:after{content:"세";}
+        
+        
+        p:before{content:'날씬한 기분의 ';}
+        p:after{content:' 다이어트 식이섬유';}
+        
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header><h1 class="text-center">박스의 안쪽 여백 padding</h1></header>
+    
+    <section>
+        <h2>내용을 읽기 편하게 하는 역할의 padding</h2>
+        
+        <article class="frst">
+            <h3>패딩을 사용하지 않으면 내용이 경계선에 달라 붙는다.</h3>            
+        </article>
+        
+        <hr>
+        
+        <article class="sec">
+            <h3>가상선택자를 이용한 셀렉팅</h3>
+            <p>
+               <a href="#1">Home</a>
+               <a href="#2">About Me</a>
+               <a href="#3">Portfolio</a>
+               <a href="#4">Design</a>
+               <a href="#5">Epilogue</a> 
+            </p>
+
+        </article>
+        
+        <hr>
+        
+        <article class="last">
+           <h3>가상선택자 :before, :after</h3>
+            
+            <h4><span>20</span></h4>
+            
+            <p>미에로화이바</p>
+            
+        </article>
+        
+    </section>
+    
+    <footer><address class="text-center">&copy; Designed by 홍길동</address></footer>
+    
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

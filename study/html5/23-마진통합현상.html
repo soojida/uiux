@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마진통합현상</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        .case_1>p{
+            width:150px;
+            height:150px;
+            margin:0 auto;
+            line-height:150px;
+            text-align:center;
+            border:1px solid black;
+           
+        }
+        p.box1{
+            background-color:red;
+        }
+        p.box2{
+            margin-bottom:50px;
+            background-color:orange;
+        }
+        p.box3{
+            margin-top:75px;
+            margin-bottom:100px;
+            background-color:yellow;
+        }
+        p.box4{
+            margin-top:25px;
+            background-color:green;
+        }
+        p.box5{
+            background-color:blue;
+        }
+    
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1 class="text-center">마진통합현상</h1>
+    
+    <section>
+        
+        <article class="case_1">
+            <h2 class="text-center">형제관계의 마진통합 테스트</h2>
+            
+            <h3 style="margin-bottom:100px;padding:20px;">마진에만 있는 마진통합현상은 형제관계에서 <mark>상하마진을 중복했을때 발생</mark>하며,
+            두 수치 중 큰 값만 살아남는다. 좌우 마진을 중복했을 때는 발생하지 않는다.</h3>
+            
+            <p class="box1">박스-1</p>
+            <p class="box2">박스-2</p>
+            <p class="box3">박스-3</p>
+            <p class="box4">박스-4</p>
+            <p class="box5">박스-5</p>
+          
+        </article>
+        
+    </section>
+</div>
+</body>
+</html>

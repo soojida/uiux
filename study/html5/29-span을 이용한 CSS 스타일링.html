@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>텍스트관련 CSS</title>
+	<style>
+        *{margin:0;padding:0;}
+        
+		#wrap{
+            margin:0 auto;
+            width:600px;
+            
+            /* calc함수는 -(마이너스) 연산자를 기준으로 반드시 양쪽에 한칸 공백이 있어야 정상적으로 작동한다.*/
+            width:calc(100%/*부모의 100%*/ - 400px);
+			text-align:center;
+			background-color:#FF0;
+		}
+/*
+	문제1 - p 태그에 폰트사이즈를 100%
+	문제2 - p 태그에 줄간격을 200%로 설정
+*/		
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<h1 style="overflow:hidden;text-indent:-150px;border:1px solid blue;">-<!--마이너스(-)는 왼쪽방향-->150px 만큼 들여쓰기, 파란색 테두리, 넘치는내용 숨김</h1>
+		
+		<!--
+		    가변폰트 : 부모의 폰트 크기를 상속하는 em, 그렇지 않은 rem
+		    
+		    1) 1em은 100%와 같은 뜻으로 부모에 설정한 크기와 같은 크기를 의미		
+
+            2) rem은 부모에 설정된 값과 상관없이 무조건 1em = 16px로 계산됨
+            
+            3) text-indent, text-align은 반드시 block의 성질을 가지고 있어야 적용된다.
+		-->
+
+		<p style="font-size:200%;line-height:200%;"><!--폰트사이즈는 기본적(100%)으로 16px-->			
+			<span style="font-size:16px;">폰트사이즈 16px</span><br />
+			<span style="color:red;font-size:3em;">글자색은 빨강, 폰트사이즈 3em<!--1em은 16px이다.--></span><br />
+			<span style="font-weight:800;font-size:3rem;">폰트굵기 800, 폰트사이즈 3rem</span><br />
+			<span style="color:blue;font-family:'굴림'">글자색은 파랑, 굴림폰트 사용</span><br />
+			<span style="text-decoration:underline;font-size:calc(36px - 20px)">텍스트 밑줄긋기, 폰트사이즈를 calc() 함수로 계산</span><br />
+			<span style="font-style:italic;">폰트스타일을 이탤릭으로</span><br />
+			<span style="letter-spacing:10px;">글자간격(자간) 10px</span><br />
+			<span style="word-spacing:30px;">단어간격 단어간격 단어간격은 30px</span><br />
+			<span style="background-color:pink;">배경색은 핑크로</span>
+		</p>	
+	</div>	
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>포지션한 요소의 적재순서를 조정하는 z-index</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        #wrap{
+            width:800px;
+            margin:0 auto;
+        }
+        
+        section{
+            /*
+                내 안에서 자손요소가 포지셔닝할 경우 나를 기준으로
+                좌표설정해라~!
+            */
+            position:relative;
+            width:500px;
+            height:400px;
+            margin:0 auto;
+            border:1px solid black;
+        }
+        section>p{
+            width:100px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            border:1px solid black;
+        }
+        
+        .red{/*1*/
+            position:absolute;
+            left:200px;
+            top:100px;
+            background-color:red;
+            
+            z-index:600;
+        }
+        .blue{/*3*/
+            position:absolute;
+            left:230px;
+            top:130px;
+            background-color:blue; 
+            
+            z-index:400;
+            
+        }
+        .yellow{/*2*/
+            position:absolute;
+            left:160px;
+            top:160px;
+            background-color:yellow;
+            
+            z-index:500;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1 class="text-center">z-index 속성으로 쌓이는 순서 조정</h1>
+    
+    <section>
+        <p class="red">red</p>
+        <p class="blue">blue</p>
+        <p class="yellow">yellow</p>        
+    </section>
+</div>
+</body>
+</html>

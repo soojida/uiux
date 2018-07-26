@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        /* id명이 wrap인 div 선택자*/
+        div#wrap{
+           
+            border:1px solid black;
+        }
+        
+        /* id명 wrap이 붙어있는 모든 요소의 직계자식 h1 */
+        #wrap>h1{
+            width:400px;
+            height:200px;
+            line-height:200px;/* 한줄의 문장을 박스의 세로 가운데 오게 하기 위해서 줄간격의 값을 높이값과 일치시킨다.*/
+            border:10px solid blue;
+            border-radius:50px;
+            text-align:center;/* 상자안에 있는 글자를 가운데 오게 할 때 */
+        }
+        h1+p{
+            width:100px;
+            height:100px;
+            border:5px solid pink;
+            text-align:center;
+            line-height:100px;
+            border-radius:20px 30px 40px 50px;
+        }
+        p.ball{
+            width:150px;
+            height:150px;
+            background-color:yellow;
+            text-align:center;
+            line-height:130px;
+            
+            /* border를 주면 기본적으로 박스의 바깥쪽에 생성되므로
+            박스의 크기가 보더수치만큼 커진다.*/
+            border:10px solid blue;
+            
+            box-sizing:border-box;/* border가 박스의 안쪽으로 생성된다. 
+            */
+            border-radius:85px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        id는 이름앞에 #표시, 절대 중복 사용 금지
+        
+        만약 id값이 두개 이상 있을 경우
+        제어할 대상을 찾지 못하고
+        첫번째 요소만 처리한다.
+     
+        ** id는 언제 사용할까? **
+        1. 레이아웃 담당하는 요소에 사용
+        2. 동적인 움직임을 표현하기 위한 자바스크립트와 연동할 때 사용
+        
+        3.나머지 요소들은 클래스와 태그선택자를 이용해서 접근하는 것을 권장
+       -->
+    
+    <div id="wrap">
+        <h1>border-radius 학습</h1>
+        <p>사각형</p>
+        
+        <hr>
+        
+        <div>
+            <p class="ball">H</p>
+            <p class="ball">T</p>
+            <p class="ball">M</p>
+            <p class="ball">L</p>
+            <p class="ball">5</p>            
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
+

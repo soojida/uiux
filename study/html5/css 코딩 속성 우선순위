@@ -1,0 +1,53 @@
+CSS 코딩 속성 우선순위
+
+레이아웃
+display overflow float position
+(position left right top bottom)
+
+
+박스모델
+width height margin padding
+
+ex)레이아웃, 박스모델 우선순위
+h1{
+    display:block;
+    width:100px;
+    margin:0;
+    padding:0;
+}
+
+
+글자관련
+color (글자색)
+font-style (기울임)
+font-weight (굵기)
+font-size (크기)
+line-height (줄간격)
+font-family (글자체)
+text-indent (들여쓰기)
+text-decoration (밑줄)
+letter-spacing (글자간격)
+word-spacing (단어간격)
+text-align (정렬)
+
+
+배경관련
+background-color (배경색)
+background-image (배경이미지)
+background-position (배경이미지 위치)
+background-size (배경이미지의 크기)
+background-repeat (배경이미지 반복여부)
+
+
+테두리관련
+border
+border-width
+border-style
+border-color
+box-sizing:border-box;
+border-radius
+
+
+기타(순서없음)
+
+

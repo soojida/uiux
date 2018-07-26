@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model과 관련된 CSS 속성</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        h1{
+            display:block;
+            display:inline;
+            /* 
+                block 요소는 벽돌처럼 쌓여서 화면에 표시
+                block 요소는 컨텐츠 양에 관계없이 한줄 전체를 다 차지한다.         
+            */
+            
+            border:1px solid red;}
+        
+        
+        /*
+            + : 인접형제(동기) 연산자
+        
+            h1+div가 가리키는 태그는
+            h1과 형제이면서,
+            h1 바로 다음에 나오는 div 태그
+        */
+        h1+div>p{
+            display:block;
+            display:inline;
+            border:1px solid blue;}
+        
+        div+p{border:1px solid green;} 
+        div+p+p{border:1px solid green;}    
+        
+        /*
+            ~ : 인접형제(동기) 연산자
+                                                                                                                                                                                                                        
+            div~p가 가리키는 태그는
+            div와 형제이면서,
+            div이후에 나오는 모든 p태그
+        */
+        div~p{border:1px solid pink;}
+        
+        
+        span{
+            display:inline;
+            display:block;
+            /* 
+                쓰지 않아도 생략되어 있는 기본 속성
+                display는 "화면에 표시하는 방식" 이라는 뜻
+            
+                inline 요소는 옆으로 나란히 배치
+                
+                width 값이 컨텐츠 양만큼 just 하다.
+            */
+            border:1px solid blue;}
+        hr{
+            border:1px solid red;
+            height:10px;
+        }
+    </style>
+</head>
+<body>
+    
+<div id="wrap">
+    <h1>웹브라우저는 모든 html 요소(태그)를 하나의 상자형태로 표현</h1>
+    
+    <div>
+        <p>첫번째 문단</p>
+        <p>두번째 문단</p>
+        <p>세번째 문단</p>
+    </div>
+    
+    <P>네번째 문단</P>
+    
+    <P>다섯번째 문단</P>
+    
+    <hr>
+    
+    <span>나는                       스팬1</span>
+    <span>나는                 스팬2</span>
+    <span>나는          스팬3</span>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>css 특정도 값(우선순위 CasCading)</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <style>
+        
+        /*
+            특정도 값이 크거나 같을 경우 끝에 오는 스타일이 우선한다.
+            
+            이와같이 CSS 선택자에 점수를 부여하여
+            우선순위를 정하는 방식을 CSS 구체성 단위라고 한다.
+        
+            결국 CSS는 동일한 요소를 가리키는 선택자가 여러개 있을 경우
+            특정도 값이 높은 선택자가 우선권을 갖게 된다.
+        
+        */
+        h1{/*특정도값 : 1점*/
+            color:red;
+            font-size:50px;
+        }
+        
+        h1{/*특정도값 : 1점*/
+            color:blue;
+        }
+        
+        #logo{/*특정도값 : 100점*/
+            color:green;
+        }
+        
+        .smart{/*특정도값 : 10점*/
+            color:black;
+        }
+        .notepad+li{
+            font-weight:800;
+        }
+        ul>li:nth-child(4){
+            font-weight:800;
+        }
+        
+        li:nth-child(4){/*특정도값 : 11점*/
+            font-weight:800 !important; /*최우선*/
+        
+        }
+        
+        h1#logo.smart+ul>li.notepad+li{/*특정도값 : 124점*/}
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1 id="logo" class="smart">CSS 구체성 단위</h1>
+    
+    
+    <ul>
+        <li>태그는 1점</li>
+        <li>클래스, 가상선택자는 10점</li>
+        <li class="notepad">아이디는 100점</li>
+        <li style="font-weight:400;">인라인방식은 1000점</li>
+        <li>!important - 무조건 최우선</li>
+    </ul>
+</div>
+    
+</body>
+</html>

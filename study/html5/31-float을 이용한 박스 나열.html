@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>float을 이용한 박스 나열</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        hr{position:static;left:0;margin:50px 0;}
+        ul.study>li{
+            float:left;
+            width:200px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+    
+        }
+        .study>li:nth-child(1){
+            background-color:red;
+        }
+        .study>li:nth-child(2){
+            background-color:yellow;
+        }
+        .study>li:nth-child(3){
+            background-color:green;
+        }
+        .study>li:nth-child(4){
+            background-color:blue;
+        }
+        
+        .clearfix{clear:both;}
+        
+        /********************************/
+        
+        /* 높이가 없기 때문에 가상의 마감재 역할로 나타남 */
+        .subject:after{
+            display:block;
+            clear:both;
+            background-color:pink;
+            content:"";
+        }
+        
+        .subject>li{
+            float:left;
+            width:200px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+        }
+        .subject>li:first-child{
+            background-color:darkviolet;
+        }
+        .subject>li:nth-child(2){
+            background-color:navy;
+        }
+        .subject>li:nth-child(3){
+            background-color:blue;
+        }
+        .subject>li:last-child{
+            background-color:dodgerblue;
+        }
+        
+        .test{*zoom:1;}
+        /*
+            구형 ie 브라우저에서 아래의 :after 가상 선택자 구문을 인식하게 하는 코드로서  CSS핵이라고 불리운다.
+        */
+
+        .test:after{
+            display:block;
+            clear:both;
+            content:"";
+        }
+        
+
+        .test>span{
+            float:left;
+            display:block;
+            width:100px;
+            height:100px;
+            line-height:100px;
+            line-height:100px;
+            text-align:center;
+            
+        }
+        
+        .test>span.red{
+            background-color:red;
+        }
+        
+        .test>span.blue{
+            background-color:blue;
+        }
+        
+        .test>span.yellow{
+            background-color:yellow;
+        }
+        
+        span:nth-child(4){
+            background-color:green;
+        }
+        span:last-child{
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <h1 class="text-center">float을 이용한 박스 나열</h1>
+    
+    <ul class="study">
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>jQuery</li>
+    </ul>
+    
+    <!--
+    
+        1. float의 끌어당기는 영향력을 차단시키는 마감재 역할
+        
+        2. float의 영향을 차단시키는 마감재 사용은 필수(반드시)
+    
+    
+    -->
+    
+        
+    <div class="clearfix"></div>
+    
+    <p>안녕</p>
+    
+    <hr>
+    
+    <ol class="subject">
+        <li>UI/UX</li>
+        <li>포토샵</li>
+        <li>일러스트</li>
+        <li>포트폴리오</li>        
+    </ol>
+    
+    
+    
+<!--    <p style="clear:both;">추천과목</p>-->
+    <p>인기과목</p>
+    
+    
+    <hr>
+    
+    <!--
+        문제) 가상선택자를 이용하여 float를 완성하세요.
+        
+            박스사이즈 : 100*100
+    
+    -->
+    
+    <p class="test">
+        <span class="red">red</span>
+        <span class="blue">blue</span>
+        <span class="yellow">yellow</span>
+        <span class="green">green</span>
+        <span class="pink">pink</span>
+    </p>
+    
+    <p>플롯테스트</p>
+    
+    
+</div>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
