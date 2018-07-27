@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+#wrap{
+    width:600px;
+    margin:0 auto;
+    background-color:#333;
+}
+
+header{
+    position:relative;
+    height:100px;
+    background-color:#069;
+}
+
+header>h1{
+    position:absolute;
+    left:30px;
+    top:40px;
+    color:#fff;
+    font-size:30px;
+}
+
+header>nav{
+    position:absolute;/* position의 성질 :컨텐츠의 양만큼 줄어든다 */
+    left:240px;
+    top:45px;
+/*    outline:1px solid red;*/
+}
+
+header>nav>.gnb{
+    
+    *zoom:1;
+    width:260px;/*ul(.gnb)는 block요소를 갖기 때문에 width값을 줘서 li의 width 범위를 맞춰준다.*/
+    
+}
+header>nav>.gnb:after{
+    display:block;
+    clear:both;
+    content:"";
+}
+header>nav>.gnb>li{
+    float:left;
+    width:65px;
+}
+header>nav>.gnb>li>a{
+    display:block;
+    height:20px;
+    color:#fff;
+    line-height:20px;
+    text-align:center;
+}
+
+/*3번째 li형재 밑의 a(앵커), nth는 친형제 관계에서만 성립된다.*/
+header>nav>.gnb>li:nth-child(3)>a,
+header>nav>.gnb>li>a:hover{
+    color:yellow;
+    font-weight:800;
+    text-shadow:1px 1px 1px rgba(255, 255, 255, 0.5/*투명도*/)
+}
+
+
+section{
+    width:570px;
+    margin:0 auto;
+    padding:30px 10px 10px 10px;
+    background-color:#fff;
+}
+
+section>p{
+    *zoom:1;
+    font-size:14px;
+    line-height:1.5;/*기본크기 120%*/
+}
+section>p:after{
+    display:block;
+    clear:both;
+    content:"";
+}
+
+/* 문맥선택자 : 태그가 확실할때 경로를 줄여쓸 수 있다. */
+section .frame{
+    display:block;
+    overflow:hidden;/*border-radius에서 넘쳐 흐른 img값을 없앨때*/
+    float:right;
+    width:300px;
+    margin:5px 0 5px 5px;
+    border-radius:5px;
+    box-shadow:3px 3px 3px #aaa;
+}
+
+section .frame>img{
+    /* 이미지 밑에 약간 뜨는 현상 해결방법 */
+    /* 방법1 */display:block;
+    /* 방법2 */vertical-align:top;
+    width:100%;
+}
+
+section>h2{
+    margin-bottom:25px;
+    color:#000;
+    font-size:25px;
+}
+
+
+footer>address{
+    height:80px;
+    color:#fff;
+    font-weight:800;
+    font-size:16px;
+    line-height:80px;
+    text-align:center;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
